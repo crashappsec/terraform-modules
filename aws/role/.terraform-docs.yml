@@ -1,0 +1,4 @@
+sections:
+  hide:
+    - requirements
+    - modules
