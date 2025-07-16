@@ -8,7 +8,7 @@
  *
  * ```terraform
  * module "crashoverride_role" {
- *   source = "github.com/crashappsec/terraform-modules//aws-role?ref=main"
+ *   source = "github.com/crashappsec/terraform-modules//aws/role?ref=main"
  *   tags = {
  *     environment = "prod"
  *   }
