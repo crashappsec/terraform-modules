@@ -27,3 +27,8 @@ output "create_date" {
   value       = aws_iam_role.this.create_date
   description = "Creation date of the IAM role."
 }
+
+output "external_id" {
+  value       = local.external_id
+  description = "External ID used in role trust relationship."
+}

@@ -18,6 +18,10 @@
  * See below for all variable options.
  */
 
+locals {
+  external_id = try(random_uuid.external_id[0].result, var.external_id)
+}
+
 resource "random_uuid" "external_id" {
   count = var.external_id == null ? 1 : 0
 }
@@ -33,7 +37,7 @@ data "aws_iam_policy_document" "trust_relationship" {
     condition {
       test     = "StringEquals"
       variable = "sts:ExternalId"
-      values   = [try(random_uuid.external_id[0].result, var.external_id)]
+      values   = [local.external_id]
     }
   }
 }

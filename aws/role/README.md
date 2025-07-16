@@ -54,6 +54,7 @@ See below for all variable options.
 | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | <a name="output_arn"></a> [arn](#output_arn)                         | Amazon Resource Name (ARN) specifying the role.                                                                       |
 | <a name="output_create_date"></a> [create_date](#output_create_date) | Creation date of the IAM role.                                                                                        |
+| <a name="output_external_id"></a> [external_id](#output_external_id) | External ID used in role trust relationship.                                                                          |
 | <a name="output_id"></a> [id](#output_id)                            | Name of the role.                                                                                                     |
 | <a name="output_name"></a> [name](#output_name)                      | Name of the role.                                                                                                     |
 | <a name="output_tags_all"></a> [tags_all](#output_tags_all)          | A map of tags assigned to the resource, including those inherited from the provider default_tags configuration block. |
