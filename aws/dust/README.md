@@ -35,9 +35,10 @@ See below for all outputs.
 
 ## Inputs
 
-| Name                                                            | Description                                     | Type     | Default                               | Required |
-| --------------------------------------------------------------- | ----------------------------------------------- | -------- | ------------------------------------- | :------: |
-| <a name="input_url_prefix"></a> [url_prefix](#input_url_prefix) | URL prefix where to query to dust extension ARN | `string` | `"https://dl.crashoverride.run/dust"` |    no    |
+| Name                                                                                 | Description                                             | Type     | Default                               | Required |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------- | -------- | ------------------------------------- | :------: |
+| <a name="input_extension_version"></a> [extension_version](#input_extension_version) | Version override. Otherwise defaults to latest version. | `string` | `null`                                |    no    |
+| <a name="input_url_prefix"></a> [url_prefix](#input_url_prefix)                      | URL prefix where to query to dust extension ARN         | `string` | `"https://dl.crashoverride.run/dust"` |    no    |
 
 ## Outputs
 

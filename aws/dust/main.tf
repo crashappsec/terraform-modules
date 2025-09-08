@@ -40,13 +40,31 @@ data "http" "arn" {
   }
 }
 
+locals {
+  latest_arn     = trimspace(data.http.arn.response_body)
+  latest_parts   = split(":", local.latest_arn)
+  i              = length(local.latest_parts) - 1
+  layer_parts    = slice(local.latest_parts, 0, local.i)
+  latest_version = local.latest_parts[local.i]
+  version        = coalesce(var.extension_version, local.latest_version)
+  version_parts  = concat(local.layer_parts, [local.version])
+  version_arn    = join(":", local.version_parts)
+}
+
 variable "url_prefix" {
   type        = string
   description = "URL prefix where to query to dust extension ARN"
   default     = "https://dl.crashoverride.run/dust"
 }
 
+variable "extension_version" {
+  type        = string
+  nullable    = true
+  default     = null
+  description = "Version override. Otherwise defaults to latest version."
+}
+
 output "arn" {
-  value       = trimspace(data.http.arn.response_body)
+  value       = local.version_arn
   description = "Latest ARN of the dust extension layer for the AWS provider region."
 }
