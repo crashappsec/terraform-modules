@@ -11,6 +11,8 @@
  *   source = "github.com/crashappsec/terraform-modules//aws/dust?ref=main"
  * }
  * resource "aws_lambda_function" "example" {
+ *   # dont forget to `chalk insert function.zip`
+ *   # before using it here
  *   filename      = "function.zip"
  *   function_name = "example"
  *   layers        = [module.dust.arn]
