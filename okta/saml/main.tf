@@ -14,7 +14,7 @@
  * ## Example
  *
  * ```terraform
- * module "dust" {
+ * module "crashoverride_saml" {
  *   source     = "github.com/crashappsec/terraform-modules//okta/saml?ref=main"
  *   connection = "test" # get this from CrashOverride
  * }
